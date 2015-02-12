@@ -51,7 +51,7 @@ public class Locomotion : MonoBehaviour {
 		
 		float angle = Vector3.Angle(v1, v2);
 
-		//auralizer.soundObjects[0].volume = PPT.rigidbody.velocity.magnitude / speed; //(float)((180f - angle) / 180f * 0.75);
+		auralizer.soundObjects[0].volume = PPT.rigidbody.velocity.magnitude / speed; //(float)((180f - angle) / 180f * 0.75);
 
 		if (flyingEnabled) {
 			Vector3 s = (180f - angle) / 180f * speed * direction + new Vector3(0, gravity, 0);
@@ -61,7 +61,7 @@ public class Locomotion : MonoBehaviour {
 			PPT.rigidbody.AddForce(f);
 		} else {
 			PPT.rigidbody.velocity = new Vector3();
-			//auralizer.soundObjects[0].volume = 0f;
+			auralizer.soundObjects[0].volume = 0f;
 		}
 
 
